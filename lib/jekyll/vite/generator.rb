@@ -4,7 +4,7 @@
 # that they are copied over to the built site.
 class Jekyll::Vite::Generator < Jekyll::Generator
   safe true
-  priority :highest
+  priority :lowest
 
   class ViteAssetFile < Jekyll::StaticFile
     # Override (4.2): Copy to the configured public_output_dir
