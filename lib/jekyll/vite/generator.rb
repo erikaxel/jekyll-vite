@@ -32,6 +32,7 @@ class Jekyll::Vite::Generator < Jekyll::Generator
   # Internal: Set the mode based on which command was run.
   # Builds assets with Vite only if `jekyll build` was run.
   def generate(site)
+    system "ls -l _site"
     serving = site.config['serving']
     ENV['JEKYLL_ENV'] ||= serving ? 'development' : 'production'
     generate_vite_build(site) unless serving
